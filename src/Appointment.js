@@ -5,6 +5,7 @@ function Appointment() {
   return (
     <div className="page">
       <p>Здесь будет запись</p>
+      <Link to="/Done">Записаться</Link>
     </div>
   )
 }

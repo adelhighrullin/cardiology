@@ -5,6 +5,7 @@ function NNPage() {
   return (
     <div className="page">
       <p>Здесь будет тест</p>
+      <Link to="/TestDone">Пройти тест</Link>
     </div>
   )
 }
