@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import NNForm from './NNForm';
-import NNResult from './NNResult';
 
-function NNPage() {
+function NNResult() {
   return (
     <div>
-      <NNForm />
-      <NNResult />
+        <input id="result" value="before"/>
     </div>
   )
 }
 
-export default NNPage;
+export default NNResult;
