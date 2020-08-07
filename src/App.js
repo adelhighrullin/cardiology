@@ -7,7 +7,7 @@ import Header from './Header';
 import Home from './Home';
 import NNPage from './NNPage';
 import TestDone from './TestDone';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 function App() {
   return (
     <div>

@@ -1,4 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
+
+function mapToObject(map) {
+  const out = Object.create(null);
+  map.forEach((value, key) => {
+    if (value instanceof Map) {
+      out[key] = mapToObject(value)
+    }
+    else {
+      out[key] = value;
+    }
+  })
+  return out;
+}
 
 function makeMap() {
     let map = new Map();
@@ -15,7 +28,16 @@ function makeMap() {
     map.set("slope", document.getElementsByName("slope")[0].value);
     map.set("ca", document.getElementsByName("ca")[0].value);
     map.set("thal", document.getElementsByName("thal")[0].value);
-    document.getElementById("result").value = map.get("age");
+    let testdata = map.values();
+    let testarray = [];
+    let teststring = "";
+    for (var i = 0; i < map.size; i++) {
+      testarray[i] = testdata.next().value;
+    }
+    teststring = testarray.join(",");
+    const outstring = JSON.stringify(mapToObject(map));
+    alert(outstring);
+    document.getElementById("result").value = outstring;
 }
 
 function NNForm() {
@@ -26,7 +48,7 @@ function NNForm() {
     <form className="testForm">
       <label>
         age:<br />
-        <input type="number" name="age" /><br />
+        <input required type="number" name="age" /><br />
         sex:<br />
         <select name="sex">
           <option value="1">Мужчина</option>
@@ -40,9 +62,9 @@ function NNForm() {
           <option value="3">Тип боли 3</option>
         </select><br />
         trestbps:<br />
-        <input type="number" name="trestbps" /><br />
+        <input required type="number" name="trestbps" /><br />
         chol:<br />
-        <input type="number" name="chol" /><br />
+        <input required type="number" name="chol" /><br />
         fbs:<br />
         <select name="fbs">
           <option value="1">True</option>
@@ -55,14 +77,14 @@ function NNForm() {
           <option value="2">2</option>
         </select><br />
         thalach:<br />
-        <input type="number" name="thalach" /><br />
+        <input required type="number" name="thalach" /><br />
         exang:<br />
         <select name="exang">
           <option value="1">yes</option>
           <option value="0">no</option>
         </select><br />
         oldpeak:<br />
-        <input type="number" name="oldpeak" /><br />
+        <input required type="number" name="oldpeak" /><br />
         slope:<br />
         <select name="slope">
           <option value="0">0</option>
