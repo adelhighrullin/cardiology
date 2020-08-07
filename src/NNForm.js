@@ -13,7 +13,7 @@ function mapToObject(map) {
   return out;
 }
 
-function makeMap() {
+async function makeMap() {
     let map = new Map();
     map.set("age", document.getElementsByName("age")[0].value);
     map.set("sex", document.getElementsByName("sex")[0].value);
@@ -29,7 +29,23 @@ function makeMap() {
     map.set("ca", document.getElementsByName("ca")[0].value);
     map.set("thal", document.getElementsByName("thal")[0].value);
     const outstring = JSON.stringify(mapToObject(map));
-    document.getElementById("result").value = outstring;
+    const url = new URL("http://127.0.0.1:8000/start/");
+    await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json; charset=utf-8'
+      },
+      body: outstring
+    });
+    const url2 = new URL("http://127.0.0.1:8000/get/");
+    let response2 = await fetch(url2, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json; charset=utf-8'
+      }
+    })
+    let answer = await response2.json();
+    document.getElementById("result").value = JSON.stringify(answer);
 }
 
 function NNForm() {
