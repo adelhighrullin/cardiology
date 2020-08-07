@@ -28,15 +28,7 @@ function makeMap() {
     map.set("slope", document.getElementsByName("slope")[0].value);
     map.set("ca", document.getElementsByName("ca")[0].value);
     map.set("thal", document.getElementsByName("thal")[0].value);
-    let testdata = map.values();
-    let testarray = [];
-    let teststring = "";
-    for (var i = 0; i < map.size; i++) {
-      testarray[i] = testdata.next().value;
-    }
-    teststring = testarray.join(",");
     const outstring = JSON.stringify(mapToObject(map));
-    alert(outstring);
     document.getElementById("result").value = outstring;
 }
 

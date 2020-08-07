@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logo from './logo.png';
 
 function Header() {
   return (
     <div className="header">
       <Link to="/">
-        <img id="logo" src="https://cdn1.flamp.ru/dc648c46e17076daf4310fc5d0e967c7.png" />
+        <img id="logo" src={ logo } alt='Кардиологический центр "Здоровое сердце"'/>
       </Link>
       <ul>
         <li>
