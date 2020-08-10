@@ -56,17 +56,20 @@ function Appointment() {
         <label>Номер телефона:</label>
         <input required type="tel" id="phone" ></input><br/>
       </form>
+      
       <table id="schedule">
-          <tbody>
+            <thead>
             <tr>
               <td></td>
-              <td value="monday">пн</td>
+              <td>пн</td>
               <td>вт</td>
               <td>ср</td>
               <td>чт</td>
               <td>пт</td>
             </tr>
-        <tr value="0910">
+            </thead>
+            <tbody>
+        <tr>
           <td><label>9:00 - 10:00</label><br/></td>
           <td><input type="radio" name="date"/><br/></td>
           <td><input type="radio" name="date" /><br/></td>
@@ -75,7 +78,7 @@ function Appointment() {
           <td><input type="radio" name="date" /><br/></td>
         </tr>
         <tr>
-          <td><label>10:00 - 11:00</label><br/></td>
+        <td><label>10:00 - 11:00</label><br/></td>
           <td><input type="radio" name="date" /><br/></td>
           <td><input type="radio" name="date" /><br/></td>
           <td><input type="radio" name="date" /><br/></td>
@@ -83,7 +86,7 @@ function Appointment() {
           <td><input type="radio" name="date" /><br/></td>
         </tr>
         <tr>
-          <td><label>11:00 - 12:00</label><br/></td>
+        <td><label>11:00 - 12:00</label><br/></td>
           <td><input type="radio" name="date" /><br/></td>
           <td><input type="radio" name="date" /><br/></td>
           <td><input type="radio" name="date" /><br/></td>
@@ -91,7 +94,16 @@ function Appointment() {
           <td><input type="radio" name="date" /><br/></td>
         </tr>
         <tr>
-          <td><label>12:00 - 13:00</label><br/></td>
+        <td><label>12:00 - 13:00</label><br/></td>
+          <td><input type="radio" name="date" /><br/></td>
+          <td><input type="radio" name="date" /><br/></td>
+          <td><input type="radio" name="date" /><br/></td>
+          <td><input type="radio" name="date" /><br/></td>
+          <td><input type="radio" name="date" /><br/></td>
+        </tr>
+        <label>перерыв</label>
+        <tr>
+        <td><label>14:00 - 15:00<br/></label></td>
           <td><input type="radio" name="date" /><br/></td>
           <td><input type="radio" name="date" /><br/></td>
           <td><input type="radio" name="date" /><br/></td>
@@ -99,10 +111,7 @@ function Appointment() {
           <td><input type="radio" name="date" /><br/></td>
         </tr>
         <tr>
-          <td>перерыв</td>
-        </tr>
-        <tr>
-          <td><label>14:00 - 15:00<br/></label></td>
+        <td><label>15:00 - 16:00<br/></label></td>
           <td><input type="radio" name="date" /><br/></td>
           <td><input type="radio" name="date" /><br/></td>
           <td><input type="radio" name="date" /><br/></td>
@@ -110,7 +119,7 @@ function Appointment() {
           <td><input type="radio" name="date" /><br/></td>
         </tr>
         <tr>
-          <td><label>15:00 - 16:00<br/></label></td>
+        <td><label>16:00 - 17:00</label><br/></td>
           <td><input type="radio" name="date" /><br/></td>
           <td><input type="radio" name="date" /><br/></td>
           <td><input type="radio" name="date" /><br/></td>
@@ -118,15 +127,7 @@ function Appointment() {
           <td><input type="radio" name="date" /><br/></td>
         </tr>
         <tr>
-          <td><label>16:00 - 17:00</label><br/></td>
-          <td><input type="radio" name="date" /><br/></td>
-          <td><input type="radio" name="date" /><br/></td>
-          <td><input type="radio" name="date" /><br/></td>
-          <td><input type="radio" name="date" /><br/></td>
-          <td><input type="radio" name="date" /><br/></td>
-        </tr>
-        <tr>
-          <td><label>17:00 - 18:00<br/></label></td>
+        <td><label>17:00 - 18:00<br/></label></td>
           <td><input type="radio" name="date" /><br/></td>
           <td><input type="radio" name="date" /><br/></td>
           <td><input type="radio" name="date" /><br/></td>

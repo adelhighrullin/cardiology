@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-async function getSchedule() {
+async function getSelectedButtons() {
     const url = new URL("http://127.0.0.1:8000/get-schedule/");
     let response = await fetch(url, {
       method: 'GET',
@@ -19,19 +19,10 @@ async function getSchedule() {
     }
 }
 
-function Home() {
+function GetSchedule() {
     return (
-        <div>
-            <div className="nnblock">
-                <p>текст о нейросети</p>
-                <Link to="/NNPage">Перейти к тесту</Link>
-            </div>
-            <div className="appblock">
-                <p>текст о записи на прием</p>
-                <Link to="/Appointment" onClick={ getSchedule }>Перейти к записи</Link>
-            </div>
-        </div>
+        getSelectedButtons
     )
 }
 
-export default Home;
+export default GetSchedule;
