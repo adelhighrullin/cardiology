@@ -6,7 +6,6 @@ import Footer from './Footer';
 import Header from './Header';
 import Home from './Home';
 import NNPage from './NNPage';
-import TestDone from './TestDone';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 function App() {
   return (
@@ -19,7 +18,6 @@ function App() {
           <Route path="/Appointment" exact component={ () => <Appointment /> } />
           <Route path="/Done" exact component={ () => <Done /> } />
           <Route path="/NNPage" exact component={ () => <NNPage /> } />
-          <Route path="/TestDone" exact component={ () => <TestDone /> } />
         </Switch>
         <Footer />
       </Router>

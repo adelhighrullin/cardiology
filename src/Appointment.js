@@ -29,11 +29,9 @@ async function getChecked() {
       break;
     }
   }
-  document.getElementById("ans").value = trow + " " + tcolumn;
   map.set("row", trow);
   map.set("column", tcolumn);
   const outstring = JSON.stringify(mapToObject(map));
-  document.getElementById("ans").value = outstring;
   const url = new URL("http://127.0.0.1:8000/set-schedule/");
     await fetch(url, {
       method: 'POST',

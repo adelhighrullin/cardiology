@@ -1,8 +1,6 @@
 import React from 'react';
 import NNForm from './NNForm';
 import NNResult from './NNResult';
-import { Link } from 'react-router-dom';
-import { getSchedule } from './Home';
 
 /*
 async function getSchedule() {
@@ -29,10 +27,6 @@ function NNPage() {
     <div>
       <NNForm />
       <NNResult />
-      <div className="appblock">
-        <p>текст о записи на прием</p>
-        <Link to="/Appointment" onClick={ getSchedule }>Перейти к записи</Link>
-      </div>
     </div>
   )
 }

@@ -1,5 +1,7 @@
 import React from 'react';
-import { mapToObject } from './Appointment'
+import { Link } from 'react-router-dom';
+import { mapToObject } from './Appointment';
+import NNResult from './NNResult';
 
 /*
 function mapToObject(map) {
@@ -50,11 +52,13 @@ async function makeMap() {
     let answer = await response2.json();
     let jsonanswer = JSON.parse(JSON.stringify(answer));
     let diagnose = jsonanswer['Result'];
+    let accuracy = jsonanswer['Accuracy'].substring(0, 5) + "%";
+
     if (diagnose === 0) {
-      document.getElementById("result").value = "С вероятностью <процент> заболевания отсутствуют.";
+      document.getElementById("result").value = "С вероятностью " + accuracy + " заболевания отсутствуют.";
     }
     else {
-      document.getElementById("result").value = "С вероятностью <процент> возможны заболевания.";
+      document.getElementById("result").value = "С вероятностью " + accuracy + " возможны заболевания.";
     }
 }
 
