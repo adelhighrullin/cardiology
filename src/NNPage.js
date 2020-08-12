@@ -2,7 +2,9 @@ import React from 'react';
 import NNForm from './NNForm';
 import NNResult from './NNResult';
 import { Link } from 'react-router-dom';
+import { getSchedule } from './Home';
 
+/*
 async function getSchedule() {
   const url = new URL("http://127.0.0.1:8000/get-schedule/");
   let response = await fetch(url, {
@@ -20,6 +22,7 @@ async function getSchedule() {
       document.getElementById("ans").value += jsonanswer.rows[i] + " " + jsonanswer.columns[i] + "\n";
   }
 }
+*/
 
 function NNPage() {
   return (
@@ -27,9 +30,9 @@ function NNPage() {
       <NNForm />
       <NNResult />
       <div className="appblock">
-                <p>текст о записи на прием</p>
-                <Link to="/Appointment" onClick={ getSchedule }>Перейти к записи</Link>
-            </div>
+        <p>текст о записи на прием</p>
+        <Link to="/Appointment" onClick={ getSchedule }>Перейти к записи</Link>
+      </div>
     </div>
   )
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function mapToObject(map) {
+export function mapToObject(map) {
   const out = Object.create(null);
   map.forEach((value, key) => {
     if (value instanceof Map) {
@@ -139,8 +139,7 @@ function Appointment() {
         <div>
           <textarea id="ans" value="" readOnly={ true }/>
         </div>
-        <input type="submit" value="Записаться" onClick={ getChecked }></input><br/>
-      <Link to="/Done">Записаться</Link>
+      <Link to="/Done"><input type="submit" value="Записаться" onClick={ getChecked }></input><br/></Link>
     </div>
   )
 }

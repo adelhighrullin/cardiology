@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-async function getSchedule() {
+export async function getSchedule() {
     const url = new URL("http://127.0.0.1:8000/get-schedule/");
     let response = await fetch(url, {
       method: 'GET',

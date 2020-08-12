@@ -1,5 +1,7 @@
 import React from 'react';
+import { mapToObject } from './Appointment'
 
+/*
 function mapToObject(map) {
   const out = Object.create(null);
   map.forEach((value, key) => {
@@ -12,6 +14,7 @@ function mapToObject(map) {
   })
   return out;
 }
+*/
 
 async function makeMap() {
     let map = new Map();
@@ -63,7 +66,7 @@ function NNForm() {
     <form className="testForm">
       <label>age:</label><br />
       <input required type="number" name="age" /><br />
-      <label>sex:</label>:<br />
+      <label>sex:</label><br />
       <select name="sex">
         <option value="1">Мужчина</option>
         <option value="0">Женщина</option>
@@ -120,7 +123,7 @@ function NNForm() {
         <option value="2">Исправлено</option>
         <option value="3">Обратимое</option>
       </select><br />
-      <input type="button" value="Отправить" onClick={makeMap}/>
+      <input type="button" value="Отправить" onClick={ makeMap }/>
     </form>
   </div>
   )
