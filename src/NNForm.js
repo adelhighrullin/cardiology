@@ -35,10 +35,9 @@ async function makeMap() {
     let answer = await response2.json();
     let jsonanswer = JSON.parse(JSON.stringify(answer));
     let diagnose = jsonanswer['Result'];
-    let accuracy = jsonanswer['Accuracy'].substring(0, 5) + "%";
-
-    if (diagnose == 0) {
-      document.getElementById("result").value += "С вероятностью " + accuracy + " заболевания отсутствуют.";
+    let accuracy = jsonanswer['Accuracy'];
+    if (diagnose < 0.5) {
+      document.getElementById("result").value += "С вероятностью " + (100 - accuracy) + "% заболевания отсутствуют.";
     }
     else {
       document.getElementById("result").value += "С вероятностью " + accuracy + " возможны заболевания.";
