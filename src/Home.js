@@ -15,20 +15,27 @@ export async function getSchedule() {
     let mytable = document.getElementById("schedule");
     for (let i = 0; i < jsonanswer.rows.length; i++) {
         mytable.rows[jsonanswer.rows[i]].cells[jsonanswer.columns[i]].querySelector("input").disabled = true;
-        document.getElementById("ans").value += jsonanswer.rows[i] + " " + jsonanswer.columns[i] + "\n";
     }
 }
 
 function Home() {
     return (
         <div>
-            <div className="nnblock">
-                <p>текст о нейросети</p>
-                <Link to="/NNPage">Перейти к тесту</Link>
+            <div className="column" id="nnblock">
+                <div id="homenn">Нейронная сеть - алгоритм математической модели, 
+                    которому на вход подаются данные для обучения. 
+                    После обучения модель может принимать новые данные 
+                    и с определенной вероятностью выдавать результат. 
+                    Вы можете ввести данные и узнать вероятность наличия 
+                    заболевания сердечно-сосудистой системы.</div>
+                <Link to="/NNPage"><button type="button">Перейти к тесту</button></Link>
             </div>
-            <div className="appblock">
-                <p>текст о записи на прием</p>
-                <Link to="/Appointment" onClick={ getSchedule }>Перейти к записи</Link>
+            <div className="column" id="appblock">
+                <div id="homeapp">Квалифицированные специалисты ждут Вас на обследование 
+                    сердечно-сосудистой системы (ЭКГ, УЗИ сердца и сосудов) 
+                    и консультации (кардиолога, сосудистого хирурга, невропатолога, 
+                    аритмолога, детского кардиолога).</div>
+                <Link to="/Appointment" onClick={ getSchedule }><button type="button">Перейти к записи</button></Link>
             </div>
         </div>
     )

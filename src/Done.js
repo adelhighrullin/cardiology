@@ -2,7 +2,7 @@ import React from 'react';
 
 function Done() {
     return (
-        <div>
+        <div className="column">
             <p>Запись на прием осуществлена. Можете покинуть эту страницу.</p><br/>
         </div>
     )

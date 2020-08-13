@@ -1,6 +1,89 @@
+* {
+    font-family: monospace;
+    font-size: 14pt;
+}
+
+.header {
+    top: 0;
+}
+
+body {
+    padding: 10px;
+    background: linear-gradient(#ffffff, #fad6de);
+    height: 100%;
+    width: 100%;
+}
+
+button {
+    border-radius: 10px;
+    padding: 16px 32px;
+	font-weight: 100;
+	display: inline-block;
+	background-color: #f0839b;
+	color: #fff;
+	border: 0;
+	text-decoration: none;
+	transition: 0.5s ease-out;
+}
+
+button:hover {
+    filter: brightness(0.5);
+	transition: 0.5s ease-out;
+	opacity: 0.5s;
+	cursor: pointer;
+}
+
+.footer {
+    bottom: 0;
+    position: relative;
+    width: 100%;
+    height: 50px;
+}
+
+.column {
+    background-size: 50%;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+#nnblock {
+    background-image: url("nnblock.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+}
+
+#homeapp, #homenn {
+    margin-left: 25%;
+    margin-right: 25%;
+    text-align: center;
+}
+
+#appblock {
+    background: url("appblock.jpg") no-repeat;
+    background-position: center;
+    background-size: 50%;
+}
+
+.testForm input, .testForm select{
+    padding: 10px;
+}
+
+.testForm {
+    background: url("doctor.jpg") no-repeat;
+    background-size: 100%;
+}
+
+#logo {
+    width: 20%;
+}
+
 li {
     display: inline-block;
-    margin-left: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 ul {
@@ -10,10 +93,16 @@ ul {
     margin-right: 20px;
 }
 
-#logo {
-    width: 15%;
+input, select {
+    margin: 10px;
 }
 
-.header, .footer {
-    padding: 10px;
+#nntext, #nnres {
+    font-size: 18pt;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+#schedule {
+    margin: 0 auto;
 }

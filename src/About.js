@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 function About() {
   return (
-    <div>
+    <div className="column">
       <p>О нас........</p>
-      <Link to="/"><p>Вернуться на главную страницу</p></Link>
+      <Link to="/"><button>Вернуться на главную страницу</button></Link>
     </div>
   )
 }

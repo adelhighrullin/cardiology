@@ -44,7 +44,7 @@ async function getChecked() {
 
 function Appointment() {
   return (
-    <div className="page">
+    <div className="column">
       <p>Здесь будет запись</p>
       <form>
         <label>Имя:</label>
@@ -54,7 +54,7 @@ function Appointment() {
         <label>Номер телефона:</label>
         <input required type="tel" id="phone" ></input><br/>
       </form>
-      
+      <div id="apptable">
       <table id="schedule">
             <thead>
             <tr>
@@ -134,10 +134,8 @@ function Appointment() {
         </tr>
         </tbody>
         </table>
-        <div>
-          <textarea id="ans" value="" readOnly={ true }/>
         </div>
-      <Link to="/Done"><input type="submit" value="Записаться" onClick={ getChecked }></input><br/></Link>
+      <Link to="/Done"><button type="submit" onClick={ getChecked }>Записаться</button><br/></Link>
     </div>
   )
 }

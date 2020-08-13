@@ -1,22 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { mapToObject } from './Appointment';
-import NNResult from './NNResult';
-
-/*
-function mapToObject(map) {
-  const out = Object.create(null);
-  map.forEach((value, key) => {
-    if (value instanceof Map) {
-      out[key] = mapToObject(value)
-    }
-    else {
-      out[key] = value;
-    }
-  })
-  return out;
-}
-*/
 
 async function makeMap() {
     let map = new Map();
@@ -54,65 +37,69 @@ async function makeMap() {
     let diagnose = jsonanswer['Result'];
     let accuracy = jsonanswer['Accuracy'].substring(0, 5) + "%";
 
-    if (diagnose === 0) {
-      document.getElementById("result").value = "С вероятностью " + accuracy + " заболевания отсутствуют.";
+    if (diagnose == 0) {
+      document.getElementById("result").value += "С вероятностью " + accuracy + " заболевания отсутствуют.";
     }
     else {
-      document.getElementById("result").value = "С вероятностью " + accuracy + " возможны заболевания.";
+      document.getElementById("result").value += "С вероятностью " + accuracy + " возможны заболевания.";
     }
 }
 
 function NNForm() {
   return (
-    <div className="page">
-    <p>Здесь будет тест</p>
+    <div className="column">
+    <p id="nntext">Модель нейронной сети, обученная на данных более 1000 пациентов,
+      предсказывает вероятность возникновения болезней с точностью выше 80%.
+      Введите информацию ниже, и методы искусственного интеллекта определят 
+      необходимость посещения кабинета квалифицированного врача.
+    </p>
     <br/>
     <form className="testForm">
-      <label>age:</label><br />
+      <label>Возраст:</label>
       <input required type="number" name="age" /><br />
-      <label>sex:</label><br />
+      <label>Пол:</label>
       <select name="sex">
         <option value="1">Мужчина</option>
         <option value="0">Женщина</option>
       </select><br />
-      <label>cp:</label><br />
+      <label>Боль в груди:</label>
       <select name="cp">
         <option value="0">Тип боли 0</option>
         <option value="1">Тип боли 1</option>
         <option value="2">Тип боли 2</option>
         <option value="3">Тип боли 3</option>
       </select><br />
-      <label>trestbps:</label><br />
+      <label>Артериальное давление:</label>
       <input required type="number" name="trestbps" /><br />
-      <label>chol</label>:<br />
+      <label>Уровень холестерина:</label>
       <input required type="number" name="chol" /><br />
-      <label>fbs:</label><br />
+      <label>Уровень сахара в крови больше 120 мг?:</label>
       <select name="fbs">
-        <option value="1">True</option>
-        <option value="0">False</option>
+        <option value="1">Да</option>
+        <option value="0">Нет</option>
       </select><br />
-      <label>restecg:</label><br />
+      <label>Результат электрокардиографии:</label>
       <select name="restecg">
         <option value="0">0</option>
         <option value="1">1</option>
         <option value="2">2</option>
       </select><br />
-      <label>thalach:</label><br />
+      <label>Максимально достигнутый пульс:</label>
       <input required type="number" name="thalach" /><br />
-      <label>exang:</label><br />
+      <label>Стенокардия:</label>
       <select name="exang">
-        <option value="1">yes</option>
-        <option value="0">no</option>
+        <option value="1">Есть</option>
+        <option value="0">Нет</option>
       </select><br />
-      <label>oldpeak:</label><br />
+      <label>Косовосходящая:</label>
       <input required type="number" name="oldpeak" /><br />
-      <label>slope:</label><br />
+      <label>Наклон косовосходящей:</label>
       <select name="slope">
         <option value="0">0</option>
         <option value="1">1</option>
         <option value="2">2</option>
       </select><br />
-      <label>ca:</label><br />
+      <label>Количество органов при рентгеноскопии:</label>
       <select name="ca">
         <option value="0">0</option>
         <option value="1">1</option>
@@ -120,14 +107,14 @@ function NNForm() {
         <option value="3">3</option>
         <option value="4">4</option>
       </select><br />
-      <label>thal:</label><br />
+      <label>Талассемия:</label>
       <select name="thal">
         <option value="0">Отсутствует</option>
         <option value="1">Норма</option>
         <option value="2">Исправлено</option>
         <option value="3">Обратимое</option>
       </select><br />
-      <input type="button" value="Отправить" onClick={ makeMap }/>
+      <button type="button" onClick={ makeMap }>Отправить</button>
     </form>
   </div>
   )

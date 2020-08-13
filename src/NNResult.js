@@ -4,10 +4,13 @@ import { getSchedule } from './Home'
 
 function NNResult() {
   return (
-    <div id="showResult">
-      <textarea id="result" value="" readOnly={ true }/>
-      <p>текст о записи на прием</p>
-      <Link to="/Appointment" onClick={ getSchedule }>Перейти к записи</Link>
+    <div className="column">
+      <textarea id="result" value="" readOnly={ true }/><br/><br/>
+      <div id="nnres">Мы не несём ответственность за достоверность результатов теста. 
+      Это лишь прогноз обученной нейронной сети. Если у Вас остаются сомнения по поводу 
+      заболеваний сердечно-сосудистой системы, пожалуйста, обратитесь к специалисту. Вы 
+      также можете записаться на консультацию в нашу клинику.</div><br/>
+      <Link to="/Appointment" onClick={ getSchedule }><button type="button">Перейти к записи</button></Link>
     </div>
   )
 }

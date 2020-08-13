@@ -10,7 +10,10 @@ function Header() {
       </Link>
       <ul>
         <li>
-          <Link to="/About">О нас</Link>
+        <Link to="/About"><button type="button">О нас</button></Link>
+        </li>
+        <li>
+          г. Казань, ул. Ю. Фучика, д. 50, 1 этаж
         </li>
         <li>
           <p>+7 (843) 211‒88‒77</p>

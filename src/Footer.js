@@ -1,15 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
     <div className="footer">
       <ul>
         <li>
-          <Link to="/About">О нас</Link>
-        </li>
-        <li>
-          <p>+7 (843) 211‒88‒77</p>
+          <p>© 2020 Кардиологическая клиника "Здоровое сердце"</p>
         </li>
       </ul>
     </div>
