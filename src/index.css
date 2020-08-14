@@ -62,9 +62,14 @@ button:hover {
 }
 
 #appblock {
-    background: url("appblock.jpg") no-repeat;
+    background-image: url("appblock.jpg");
+    background-repeat: no-repeat;
     background-position: center;
     background-size: 50%;
+}
+
+#map {
+    margin: auto;
 }
 
 .testForm input, .testForm select{
