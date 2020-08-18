@@ -36,11 +36,12 @@ async function makeMap() {
     let jsonanswer = JSON.parse(JSON.stringify(answer));
     let diagnose = jsonanswer['Result'];
     let accuracy = jsonanswer['Accuracy'];
-    if (diagnose < 0.5) {
-      document.getElementById("result").value += "С вероятностью " + (100 - accuracy) + "% заболевания отсутствуют.";
+    accuracy = accuracy.substring(0, 5);
+    if (diagnose == 0) {
+      document.getElementById("result").value += "С вероятностью " + accuracy + "% заболевания отсутствуют.";
     }
     else {
-      document.getElementById("result").value += "С вероятностью " + accuracy + " возможны заболевания.";
+      document.getElementById("result").value += "С вероятностью " + accuracy + "% возможны заболевания.";
     }
 }
 

@@ -45,7 +45,7 @@ async function getChecked() {
 function Appointment() {
   return (
     <div className="column">
-      <p>Здесь будет запись</p>
+      <p>Введите свои данные и выберите свободное день и время посещения специалиста:</p>
       <form>
         <label>Имя:</label>
         <input required type="text" id="name" ></input><br/>
